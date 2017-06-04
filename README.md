@@ -1,4 +1,4 @@
-# mbr-py
+# minimum bounding box - python
 Minimum bounding box operations in python
 
 # example
