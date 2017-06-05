@@ -35,34 +35,37 @@ print box1.distance(box4) #1.118
 
 ```
 ## methods 
-    as_poly_array(self)
-    is_point(self)
-    clone(self)
-    as_tuple(self) 
-    equals(self, other)
-    translate(self, dx, dy)
-    intersection(self, other)
-    intersects_bounds(self, q1, q2)
-    contains(self, other)
-    contains_xy(self, x, y)
-    completely_contains_xy(self, x, y)
-    completely_contains_mbr(self, other)
-    disjoint(self, other)
-    intersects(self, other)
-    intersects_point(self, pt)
-    expand_include_mbr(self, other)
-    expand_by_delta(self, dx, dy)
-    expand_include_xy(self, x_coord, y_coord)
-    distance(self, other)
-    distance_square(self, other)
-
+```python
+    as_poly_array(self)      # ((x, y),..., (x, y)) 
+    is_point(self)           # bool  -> (height,width) == (0,0)
+    clone(self)              # MBR(minx, miny, maxx, maxy)
+    as_tuple(self)           # (minx, miny, maxx, maxy)
+    equals(self, other)      # bool
+    translate(self, dx, dy)  # bool
+    intersection(self, other)# MBR, bool
+    intersects_bounds(self, q1, q2)           # bool, q1 and q2 -> (x, y)
+    contains(self, other)                     # bool
+    contains_xy(self, x, y)                   # bool
+    completely_contains_xy(self, x, y)        # bool
+    completely_contains_mbr(self, other)      # bool
+    disjoint(self, other)                     # bool
+    intersects(self, other)                   # bool
+    intersects_point(self, pt)                # bool, pt -> (x, y)
+    expand_include_mbr(self, other)           # bool
+    expand_by_delta(self, dx, dy)             # self
+    expand_include_xy(self, x_coord, y_coord) # self 
+    distance(self, other)                     # float 
+    distance_square(self, other)              # float 
+```
 
 ## properties
-    llur -> (minx, miny), (maxx, maxy)
-    width
-    height
-    area
-    center
+```python
+    llur    # float
+    width   # float
+    height  # float
+    area    # float
+    center  # (float, float)
+```
 
 # lic
 MIT
