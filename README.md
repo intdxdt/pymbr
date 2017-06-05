@@ -33,34 +33,32 @@ inter, bln = box2.intersection(box4)
 
 print box1.distance(box4) #1.118
 
-
-
 ```
 ## methods 
-    as_poly_array
-    is_point
-    clone
-    as_tuple
-    equals
-    translate
-    intersection
-    intersects_bounds
-    contains
-    contains_xy
-    completely_contains_xy
-    completely_contains_mbr
-    disjoint
-    intersects
-    intersects_point
-    expand_include_mbr
-    expand_by_delta
-    expand_include_xy
-    distance
-    distance_square
+    as_poly_array(self)
+    is_point(self)
+    clone(self)
+    as_tuple(self) 
+    equals(self, other)
+    translate(self, dx, dy)
+    intersection(self, other)
+    intersects_bounds(self, q1, q2)
+    contains(self, other)
+    contains_xy(self, x, y)
+    completely_contains_xy(self, x, y)
+    completely_contains_mbr(self, other)
+    disjoint(self, other)
+    intersects(self, other)
+    intersects_point(self, pt)
+    expand_include_mbr(self, other)
+    expand_by_delta(self, dx, dy)
+    expand_include_xy(self, x_coord, y_coord)
+    distance(self, other)
+    distance_square(self, other)
 
 
 ## properties
-    llur
+    llur -> (minx, miny), (maxx, maxy)
     width
     height
     area

@@ -127,14 +127,6 @@ class MBR(object):
         """
         return MBR(self.minx, self.miny, self.maxx, self.maxy)
 
-    @property
-    def llur(self):
-        """
-         lower left and upper right
-         :return:tuple
-        """
-        return (self.minx, self.miny), (self.maxx, self.maxy)
-
     def as_tuple(self):
         """
          lower left and upper right
@@ -153,32 +145,6 @@ class MBR(object):
                float_equal(self.minx, other.minx) and \
                float_equal(self.miny, other.miny)
 
-    @property
-    def width(self):
-        """
-         returns the difference between
-         the maximum and minimum x values.
-         :return:float
-        """
-        return self.maxx - self.minx
-
-    @property
-    def height(self):
-        """
-        returns the difference between
-        the maximum and minimum y values.
-        :return:float
-        """
-        return self.maxy - self.miny
-
-    @property
-    def area(self):
-        """
-         area
-         :return:float
-        """
-        return self.height * self.width
-
     def translate(self, dx, dy):
         """
         translate mbr  by change in x and y
@@ -190,14 +156,6 @@ class MBR(object):
             self.minx + dx, self.miny + dy,
             self.maxx + dx, self.maxy + dy,
         )
-
-    @property
-    def center(self):
-        """
-        center mbr - x and y
-        :returns:tuple
-        """
-        return (self.minx + self.maxx) / 2.0, (self.miny + self.maxy) / 2.0
 
     def intersection(self, other):
         """
@@ -420,3 +378,47 @@ class MBR(object):
             return 0.0
         dx, dy = self._distance_dxdy(other)
         return (dx * dx) + (dy * dy)
+
+    @property
+    def llur(self):
+        """
+         lower left and upper right
+         :return:tuple
+        """
+        return (self.minx, self.miny), (self.maxx, self.maxy)
+
+    @property
+    def width(self):
+        """
+         returns the difference between
+         the maximum and minimum x values.
+         :return:float
+        """
+        return self.maxx - self.minx
+
+    @property
+    def height(self):
+        """
+        returns the difference between
+        the maximum and minimum y values.
+        :return:float
+        """
+        return self.maxy - self.miny
+
+    @property
+    def area(self):
+        """
+         area
+         :return:float
+        """
+        return self.height * self.width
+
+
+    @property
+    def center(self):
+        """
+        center mbr - x and y
+        :returns:tuple
+        """
+        return (self.minx + self.maxx) / 2.0, (self.miny + self.maxy) / 2.0
+
