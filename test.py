@@ -1,6 +1,6 @@
 import math
 import unittest
-from __init__ import MBR
+from mbr import MBR
 
 m00 = MBR(0, 0, 0, 0)
 m00.expand_include_xy(2, 2)
